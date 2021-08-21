@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"/>
+    <title>Developer details</title>
+</h:head>
+<h:body>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{springDeveloperDetailsBean.init}" />
+    </f:metadata>
+    <ui:composition template="layout.xhtml">
+        <ui:define name="content">
+            <h:form id="developerDetailsForm" >
+                <p:panel header="Add Developer Details">
+                    <p:panelGrid columns="2">
+                        <p:outputLabel for="developerFirstName" value="First Name " />
+                            <p:inputText disabled="true" id="developerFirstName" value="#{springDeveloperDetailsBean.developerFirstName}" >
+                        </p:inputText>
+                        <p:outputLabel for="developerLastName" value="Last Name " />
+                            <p:inputText disabled="true" id="developerLastName" value="#{springDeveloperDetailsBean.developerLastName}" />
+                        <p:outputLabel  value="Skills" />
+                        <ui:repeat value="#{springDeveloperDetailsBean.devSkillList}" var ="skill">
+                            <h:outputText id="Skills" value="#{skill.skillName} - #{skill.skillDescription}" />
+                        </ui:repeat>
+                        <h:selectOneMenu value="#{springDeveloperDetailsBean.skillName}" >
+                            <f:selectItems value="#{springDeveloperDetailsBean.devSkillStandingDataList}" var="skill" itemValue="#{skill.skillName} " itemLabel="#{skill.skillName} #{skill.skillDescription}" />
+                        </h:selectOneMenu>
+                        <p:commandButton id="submit" value="Add skill" action="#{springDeveloperDetailsBean.addSkill()}"/>
+                    </p:panelGrid>
+                </p:panel>
+           </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

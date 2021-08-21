@@ -1,0 +1,19 @@
+SkillName                  SkillDescription
+JAVA                       Language framework(4 G)
+PHP                        Language framework(4 G)
+C#                         Language framework(4 G)
+C++                        Language framework(3rd G)
+C                          Language framework(3rd G)
+(SSF)                      FUNDAMENTALS
+(ISY)                      FUNDAMENTALS
+(ITS)                      ARTICULATION
+(GUI)                      WEB/UX
+(SQL)                      SQL Language framwork(4 G)
+(JS)                       Js Framework(4 G)
+(CSS2/3+)                  Web Stylying framework(4 G)
+ANGULAR                    Angular Js framework(4 G)
+ANGULAR JS                 Angular Js framework(4 G)
+REACT JS                   React Js framework(4 G)
+VUE JS                     Vue Js framework(4 G)
+AGILE                      Process Skills
+Ms Azure                   Technology Skills
